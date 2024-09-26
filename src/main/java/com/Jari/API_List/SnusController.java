@@ -20,7 +20,21 @@ public class SnusController {
 
     @GetMapping("/snus")
     public ArrayList<Snus> getSnus(){
+
         return snusList;
+    }
+
+    @DeleteMapping("/snus/delete")
+    public void deleteSnus(@RequestBody String name){
+        //snusList.removeIf(obj -> obj.name == name);
+        System.out.println(name);
+        int index = 0;
+        for(int i = 0; i < snusList.size(); i++){
+            if(snusList.get(i).name == name) {
+                index = i;
+            }
+        }
+        snusList.remove(index);
     }
 
     //Using this to check verify list

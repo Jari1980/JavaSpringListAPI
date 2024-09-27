@@ -25,12 +25,12 @@ public class SnusController {
     }
 
     @DeleteMapping("/snus/delete")
-    public void deleteSnus(@RequestBody String name){
+    public void deleteSnus(@RequestBody String id){
         //snusList.removeIf(obj -> obj.name == name);
-        System.out.println(name);
+        System.out.println(id);
         int index = 0;
         for(int i = 0; i < snusList.size(); i++){
-            if(snusList.get(i).name == name) {
+            if(snusList.get(i).name == id) {
                 index = i;
             }
         }
